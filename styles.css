@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+:root{
+    --black: #000000;
+    --dark-blue: #19202d;
+    --wihte: #ffffff;
+    --grey-100: #E7EaEE;
+    --grey-200: #CFCFCF;
+    --grey-400: #676D7E;
+    --grey-500:#48556A;
+    --purple-50: #EDE4FF;
+    --purple-300: #A775F1;
+    --purple-500: #733FC8;
+
+    --font-barlow: 'Barlow Semi Condensed', sans-serif;
+
+    --spacing-500: 4rem;
+    --spacing-400: 3.2rem;
+    --spacing-300: 2.4rem;
+    --spacing-200: 1.6rem;
+    --spacing-100: 0.8rem;
+    --spacing-50: 0.4rem;
+}
+
+.text-preset-1{
+    font-family: var(--font-barlow);
+    font-weight: 600; /* Semi-Bold */
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after, *::before{
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #F6F5F6;
+}
+
+
+.text-preset-2{
+    font-family: var(--font-barlow);
+    font-weight: 500; /* Medium */
+    font-size: 1.3rem;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.text-preset-3{
+    font-family: var(--font-barlow);
+    font-weight: 500; 
+    font-size: 1.3rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+.text-preset-4{
+    font-family: var(--font-barlow);
+    font-weight: 500; 
+    font-size: 1.1rem;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-400);
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-400);
+    gap: var(--spacing-200);
+    border-radius: 0.8rem;
+    width: 30.5rem;
+    max-width: 95%;
+}
+
+.author-avatar{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-container{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-100);
+}
+
+.author-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.purple-card .author-avatar{
+    box-shadow: 0 0 0 2px  #A775F1;
+    
+}
+
+article.purple-card{
+    background-color: var(--purple-500);
+    color: var(--wihte);
+}
+
+.purple-card .author-role,.purple-card .quote-body{
+    color: var(--purple-50);
+}
