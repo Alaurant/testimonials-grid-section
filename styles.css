@@ -7,7 +7,7 @@ html {
 :root{
     --black: #000000;
     --dark-blue: #19202d;
-    --wihte: #ffffff;
+    --white: #ffffff;
     --grey-100: #E7EaEE;
     --grey-200: #CFCFCF;
     --grey-400: #676D7E;
@@ -34,31 +34,6 @@ html {
     letter-spacing: 0;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-*::after, *::before{
-    box-sizing: border-box;
-}
-
-ul,
-ol,
-li {
-  padding: 0;
-  margin: 0;
-}
-
-body{
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    background-color: #F6F5F6;
-}
-
-
 .text-preset-2{
     font-family: var(--font-barlow);
     font-weight: 500; /* Medium */
@@ -83,11 +58,46 @@ body{
     letter-spacing: 0;
 }
 
-section{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after, *::before{
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+body{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F6F5F6;
+}
+
+.testimonials-grid{
+    margin-block: var(--spacing-500);
+    display: grid;
+    justify-content: center;
     align-items: center;
     gap: var(--spacing-400);
+    width: 95%;
+    max-width: 30.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
 }
 
 article{
@@ -96,8 +106,8 @@ article{
     padding: var(--spacing-400);
     gap: var(--spacing-200);
     border-radius: 0.8rem;
-    width: 30.5rem;
-    max-width: 95%;
+    width: 100%;
+    height: 100%;
 }
 
 .author-avatar{
@@ -118,16 +128,84 @@ article{
     flex-direction: column;
 }
 
-.purple-card .author-avatar{
+.purple-card .author-avatar, .black-card .author-avatar{
     box-shadow: 0 0 0 2px  #A775F1;
-    
 }
 
 article.purple-card{
     background-color: var(--purple-500);
-    color: var(--wihte);
+    color: var(--white);
 }
 
 .purple-card .author-role,.purple-card .quote-body{
     color: var(--purple-50);
 }
+
+article.grey-card{
+    background-color: var(--grey-500);
+    color: var(--white);
+}
+
+.grey-card .author-role{
+    color: var(--grey-300);
+}
+
+.grey-card .quote-body{
+    color: var(--grey-100);
+}
+
+article.white-card{
+    background-color: var(--white);
+    color: var(--grey-500);
+}
+
+.white-card .author-role, .white-card .quote-body{
+    color: var(--grey-400);
+}
+
+article.black-card{
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.black-card .quote-lead{
+    color: var(--grey-200);
+}
+.black-card .quote-body{
+    color: var(--grey-100);
+}
+
+.purple-card   { grid-area: daniel; }
+.grey-card     { grid-area: jonathan; }
+.Jeanette      { grid-area: jeanette; }
+.black-card    { grid-area: patrick; }
+.kira          { grid-area: kira; }
+
+@media (min-width: 767px){
+
+    .testimonials-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 85%;
+        max-width: 64rem;
+        grid-template-areas: 
+            "daniel   daniel"
+            "jonathan jeanette"
+            "patrick  patrick"
+            "kira     kira"; 
+    }
+}
+
+@media (min-width: 1025px){
+
+    .testimonials-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 114rem;
+        grid-template-areas: 
+            "daniel   daniel jonathan kira"
+            "jeanette patrick  patrick kira"; 
+    }
+    
+}
+
